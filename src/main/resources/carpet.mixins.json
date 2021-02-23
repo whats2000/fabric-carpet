@@ -192,8 +192,10 @@
     "PlayerEntity_creativeNoClipMixin",
     "PistonBlockEntity_playerHandlingMixin",
     "BlockItem_creativeNoClipMixin",
-    "LivingEntity_creativeFlyMixin"
+    "LivingEntity_creativeFlyMixin",
 
+    "NoteBlockChunkLoaderMixin",
+    "PistonHeadChunkLoaderMixin"
   ],
   "client": [
     "RenderTickCounter_tickSpeedMixin",

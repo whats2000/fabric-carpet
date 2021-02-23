@@ -28,6 +28,8 @@ public class LoggerRegistry
     public static boolean __packets;
     public static boolean __pathfinding;
     public static boolean __explosions;
+    public static boolean __noteBlockChunkLoader;
+    public static boolean __pistonHeadChunkLoader;
 
     public static void initLoggers()
     {
@@ -41,13 +43,14 @@ public class LoggerRegistry
         registerLogger("tnt", Logger.stardardLogger( "tnt", "brief", new String[]{"brief", "full"}));
         registerLogger("projectiles", Logger.stardardLogger("projectiles", "brief",  new String[]{"brief", "full"}));
         registerLogger("fallingBlocks",Logger.stardardLogger("fallingBlocks", "brief", new String[]{"brief", "full"}));
-        registerLogger( "pathfinding", Logger.stardardLogger("pathfinding", "20", new String[]{"2", "5", "10"}));
+        registerLogger("pathfinding", Logger.stardardLogger("pathfinding", "20", new String[]{"2", "5", "10"}));
         registerLogger("tps", HUDLogger.stardardHUDLogger("tps", null, null));
         registerLogger("packets", HUDLogger.stardardHUDLogger("packets", null, null));
         registerLogger("counter",HUDLogger.stardardHUDLogger("counter","white", Arrays.stream(DyeColor.values()).map(Object::toString).toArray(String[]::new)));
-        registerLogger("mobcaps", HUDLogger.stardardHUDLogger("mobcaps", "dynamic",new String[]{"dynamic", "overworld", "nether","end"}));
-        registerLogger("explosions", HUDLogger.stardardLogger("explosions", "brief",new String[]{"brief", "full"}));
-
+        registerLogger("mobcaps", HUDLogger.stardardHUDLogger("mobcaps", "dynamic", new String[]{"dynamic", "overworld", "nether","end"}));
+        registerLogger("explosions", HUDLogger.stardardLogger("explosions", "brief", new String[]{"brief", "full"}));
+        registerLogger("noteBlockChunkLoader", Logger.stardardLogger("noteBlockChunkLoader","dynamic", new String[]{"dynamic", "overworld", "nether","end"}));
+        registerLogger("pistonHeadChunkLoader", Logger.stardardLogger("pistonHeadChunkLoader","dynamic", new String[]{"dynamic", "overworld", "nether","end"}));
     }
 
     /**

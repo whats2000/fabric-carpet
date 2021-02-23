@@ -237,6 +237,23 @@
   "rule.spawnChunksSize.desc": "更改出生点永久加载区块半径",
   "rule.spawnChunksSize.extra.0": "定义新半径\n设为0以禁用出生点区块加载",
 
+  "rule.noteBlockChunkLoader.name": "音符盒加载器",
+  "rule.noteBlockChunkLoader.desc": "启用音符盒加载器(在 音符盒加载时长 更改游戏刻)",
+
+  "rule.noteBlockChunkLoaderNote.name": "音符盒加载器设置音符",
+  "rule.noteBlockChunkLoaderNote.desc": "改变特定音符启用加载器",
+  "rule.noteBlockChunkLoaderNote.extra.0": "预设为-1，为启用全部",
+
+  "rule.noteBlockChunkLoaderRadius.name": "音符盒加载器加载半径",
+  "rule.noteBlockChunkLoaderRadius.desc": "更改音符盒加载器加载半径",
+  "rule.noteBlockChunkLoaderRadius.extra.0": "预设为3，模拟地狱门加载",
+
+  "rule.noteBlockChunkLoaderTick.name": "音符盒加载时长",
+  "rule.noteBlockChunkLoaderTick.desc": "更改音符盒加载时长",
+  "rule.noteBlockChunkLoaderTick.extra.0": "预设为300",
+
+  "rule.pistonHeadChunkLoader.name": "活塞头加载器",
+  "rule.pistonHeadChunkLoader.desc": "启用活塞头加载器，在活塞座上方放置黑曜石可以在活塞头产生/移除时加载头部所在区块，时长6gt",
 
   "category.bugfix": "漏洞修复",
   "category.survival": "生存",
@@ -249,6 +266,7 @@
   "category.dispenser": "发射器",
   "category.scarpet": "Scarpet脚本语言",
   "category.client": "客户端",
+  "category.loader": "加载器",
 
   "ui.browse_categories": "浏览分类",
   "ui.list_all_%(cat)s_settings": "列出所有 %s 选项",

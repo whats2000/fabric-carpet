@@ -4,6 +4,7 @@ import carpet.settings.ParsedRule;
 import carpet.settings.Rule;
 import carpet.settings.SettingsManager;
 import carpet.settings.Validator;
+import carpet.utils.NoteBlockChunkLoader;
 import carpet.utils.Translations;
 import carpet.utils.Messenger;
 import carpet.utils.SpawnChunks;
@@ -38,6 +39,7 @@ import static carpet.settings.RuleCategory.TNT;
 import static carpet.settings.RuleCategory.DISPENSER;
 import static carpet.settings.RuleCategory.SCARPET;
 import static carpet.settings.RuleCategory.CLIENT;
+import static carpet.settings.RuleCategory.LOADER;
 
 @SuppressWarnings("CanBeFinal")
 public class CarpetSettings
@@ -864,4 +866,80 @@ public class CarpetSettings
             category = {BUGFIX}
     )
     public static boolean lightningKillsDropsFix = false;
+
+    @Rule(
+            desc = ("Enable NoteBlock Chunk Loading(Load gametick set in noteBlockChunkLoaderTick"),
+            category = {FEATURE, LOADER}
+    )
+    public static boolean noteBlockChunkLoader = false;
+
+    public static class NoteBlockNoteValidator extends Validator<Integer>{
+
+        @Override
+        public Integer validate(ServerCommandSource source, ParsedRule<Integer> currentRule, Integer newValue, String string) {
+            return (newValue >= -1 && newValue <= 24) ? newValue : null;
+        }
+        @Override
+        public String description() {
+            return "You must choose a value from -1 to 24";
+        }
+    }
+    @Rule(
+            desc = "Changes the note of the noteblock provide chunkload of the server.",
+            extra = "Set to -1 to set to any note.",
+            options = {"-1", "0", "12", "24"},
+            category = {LOADER},
+            strict = false,
+            validate = NoteBlockNoteValidator.class
+    )
+    public static int noteBlockChunkLoaderNote = -1;
+
+    public static class NoteBlockRadiusValidator extends Validator<Integer>{
+
+        @Override
+        public Integer validate(ServerCommandSource source, ParsedRule<Integer> currentRule, Integer newValue, String string) {
+            return (newValue >= 1 && newValue <= 30) ? newValue : null;
+        }
+        @Override
+        public String description() {
+            return "You must choose a value from 1 to 30";
+        }
+    }
+    @Rule(
+            desc = "Changes the noteblock provide chunkload radius of the server.",
+            extra = "Default set to 3 just like portal load.",
+            options = {"3"},
+            category = {LOADER},
+            strict = false,
+            validate = NoteBlockRadiusValidator.class
+    )
+    public static int noteBlockChunkLoaderRadius = 3;
+
+    public static class NoteBlockTicksValidator extends Validator<Integer>{
+
+        @Override
+        public Integer validate(ServerCommandSource source, ParsedRule<Integer> currentRule, Integer newValue, String string) {
+            return (newValue >= 1 && newValue <= 18000) ? newValue : null;
+        }
+        @Override
+        public String description() {
+            return "You must choose a value from 1 to 18000";
+        }
+    }
+    @Rule(
+            desc = "Changes the noteblock provide chunkload ticks of the server.",
+            extra = "Default set to 300",
+            options = {"300"},
+            category = {LOADER},
+            strict = false,
+            validate = NoteBlockTicksValidator.class
+    )
+    public static int noteBlockChunkLoaderTick = 300;
+
+    @Rule(
+            desc = ("Enable Piston Chunk Loading While Obsidian was Placed On Top of It(Expire time : 6Game-Ticks, Anchor of Chunk Loading : Piston Head)"),
+            category = {FEATURE, LOADER}
+    )
+    public static boolean pistonHeadChunkLoader = false;
+
 }
