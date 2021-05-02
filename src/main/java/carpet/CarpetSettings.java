@@ -4,10 +4,9 @@ import carpet.settings.ParsedRule;
 import carpet.settings.Rule;
 import carpet.settings.SettingsManager;
 import carpet.settings.Validator;
-import carpet.utils.NoteBlockChunkLoader;
-import carpet.utils.Translations;
 import carpet.utils.Messenger;
 import carpet.utils.SpawnChunks;
+import carpet.utils.Translations;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.server.MinecraftServer;
@@ -28,18 +27,7 @@ import java.util.Iterator;
 import java.util.Locale;
 import java.util.Optional;
 
-import static carpet.settings.RuleCategory.BUGFIX;
-import static carpet.settings.RuleCategory.COMMAND;
-import static carpet.settings.RuleCategory.CREATIVE;
-import static carpet.settings.RuleCategory.EXPERIMENTAL;
-import static carpet.settings.RuleCategory.FEATURE;
-import static carpet.settings.RuleCategory.OPTIMIZATION;
-import static carpet.settings.RuleCategory.SURVIVAL;
-import static carpet.settings.RuleCategory.TNT;
-import static carpet.settings.RuleCategory.DISPENSER;
-import static carpet.settings.RuleCategory.SCARPET;
-import static carpet.settings.RuleCategory.CLIENT;
-import static carpet.settings.RuleCategory.LOADER;
+import static carpet.settings.RuleCategory.*;
 
 @SuppressWarnings("CanBeFinal")
 public class CarpetSettings
